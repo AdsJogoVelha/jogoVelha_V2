@@ -5,6 +5,7 @@ import Hash from '@ioc:Adonis/Core/Hash'
 
 export default class UsuariosController {
   
+  //#region Autenticação
   public async autenticacao({request, auth, response}: HttpContextContract) {
     const usuario2 = request.input('email')
     const senha = request.input('senha')
@@ -16,7 +17,7 @@ export default class UsuariosController {
     .where('apelido', usuario2)
     .firstOrFail()
 
-      const id = usuario.id
+    
    // Verify password
    if (!(await Hash.verify(usuario.senha, senha))) {
     return response.unauthorized('Invalid credentials')
@@ -34,11 +35,8 @@ export default class UsuariosController {
     console.log(err)
     return err
   }
-
-
-
-
   }
+  //#endregion
 
   //#region Cadastrando o usuario
   public async cadastro_usuario({request}: HttpContextContract) {
@@ -48,7 +46,6 @@ export default class UsuariosController {
     console.log(select)
 
     if(select){
-      console.log(select?.apelido)
       return {
         Atencao: "Usuário já cadastrado no sistema"
       }
@@ -62,11 +59,9 @@ export default class UsuariosController {
 
   }
 //#endregion
-  
 
+//#region modelo de controller
   public async store({}: HttpContextContract) {}
-
-  public async show({}: HttpContextContract) {}
-
+//#endregion
 
 }

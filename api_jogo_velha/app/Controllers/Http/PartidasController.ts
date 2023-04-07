@@ -2,6 +2,8 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Partida from 'App/Models/Partida'
 
 export default class PartidasController {
+
+  //#region criando a partida
   public async index({auth, request, }: HttpContextContract) {
     try{
       if(await auth.use('api').authenticate()){
@@ -20,16 +22,11 @@ export default class PartidasController {
       return err
     }
   }
+  //#endregion
 
   public async create({}: HttpContextContract) {}
 
   public async store({}: HttpContextContract) {}
 
-  public async show({}: HttpContextContract) {}
 
-  public async edit({}: HttpContextContract) {}
-
-  public async update({}: HttpContextContract) {}
-
-  public async destroy({}: HttpContextContract) {}
 }
