@@ -11,10 +11,14 @@
 		<!-- estilo -->
 		<link href="css/style.css" rel="stylesheet">
 	</head>
+	<body id="app">
+        <script>
+            import Vue from 'vue'
+            new Vue({
+                el: '#app',
+                template:`
 
-	<body>
-
-		<div class="container">
+            <div class="container">
             <div class="row vertical-offset-80">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default">
@@ -36,7 +40,7 @@
                                     <div id="buttons-container">
                                     <input class="btn btn-lg btn-success btn-block" type="submit" id="buttons-container" value="Entrar »">
                                     </div><br>
-                                    Não tem cadastro? <a href="cadastro_usuario/index.html">Clique aqui</a>
+                                    Não tem cadastro? <a href="../src/views/cadastro_usuario/index.html">Clique aqui</a>
                                 </fieldset>
                             </form>
                         </div>
@@ -46,7 +50,15 @@
             </div>
         </div>
         <script src="js/scripts.js"></script>
+                
+                ` ,
+                 methods: {
+                    login(){
+                    console.log('login');
+                    }
+                },
 
-		
+            })
+    </script>
 	</body>
 </html>

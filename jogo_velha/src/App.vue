@@ -9,6 +9,9 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      const app = new Vue({
+  router
+}).$mount('#app')
     </div>
   </header>
 
