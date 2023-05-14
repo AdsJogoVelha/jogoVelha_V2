@@ -64,4 +64,12 @@ export default class UsuariosController {
   public async store({}: HttpContextContract) {}
 //#endregion
 
+//#region Teste de classe
+public async classe({}: HttpContextContract) {
+  console.log("cheguei na classe")
+  const classe = new Usuario
+ //classe.CriarJogador()
+}
+
+//#endregion
 }

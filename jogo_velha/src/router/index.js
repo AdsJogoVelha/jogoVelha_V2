@@ -6,8 +6,8 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {
-      path: '/',
-      component: Login
+      path: '/fsdfs',
+      component: dsf
     },
     {
       path: '/about',
@@ -15,7 +15,7 @@ const router = new VueRouter({
     },
     {
       path: '/cadastro_usuario/index.html',
-      component: Cadastro_usuario/indexedDB.html
+      component: Cadastro_usuario
     }
   ]
 })

@@ -1,21 +1,19 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class Partida extends BaseModel {
+export default class ResultadoJogo extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public id_usuario1: number
+  public id_partida: number
 
   @column()
-  public id_usuario2: number
+  public id_usuario: number
 
   @column()
-  public id_partida: string
+  public status_jogo: string
 
-  @column()
-  public id_vencedor: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -23,4 +21,3 @@ export default class Partida extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 }
-

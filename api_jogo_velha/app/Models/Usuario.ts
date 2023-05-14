@@ -18,6 +18,21 @@ export default class db_usuarios extends BaseModel {
   @column()
   public senha: string
 
+  @column()
+  public sub: string
+
+  @column()
+  public picture: string
+
+  @column()
+  public vitorias: string
+
+  @column()
+  public derrotas: string
+
+  @column()
+  public empates: string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
@@ -30,4 +45,21 @@ export default class db_usuarios extends BaseModel {
       user.senha = await Hash.make(user.senha)
     }
   }
+
+  //Teste de classe
+  CriarJogador(nome, apelido, email, senha, sub, picture){
+    console.log('Criando Jogador...')
+    this.nome = nome
+    this.apelido = apelido 
+    this.email = email 
+    this.senha = senha 
+    this.sub = sub 
+    this.picture = picture
+    
+    this.save()
+
+  }
+
+
+
 }

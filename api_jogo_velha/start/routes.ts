@@ -32,6 +32,9 @@ Route.post('/autenticacao','UsuariosController.autenticacao').prefix('/api')
 
 Route.post('/posicao','UsuariosController.posicao').prefix('/api')
 
+//Route.get('/teste_classe','UsuariosController.classe')
+
+
 
 
 
